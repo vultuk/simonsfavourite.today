@@ -3,210 +3,428 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Simon's Favourite Tech Providers</title>
+  <title>Simon's Favourite Tech Tools</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #0f1115;
-      --card: rgba(255, 255, 255, 0.06);
-      --card-border: rgba(255, 255, 255, 0.12);
-      --text: #f7f8fb;
-      --muted: #c2c6d1;
-      --accent: #7ad7ff;
-      --shadow: 0 18px 50px rgba(0, 0, 0, 0.35);
-      --blur: saturate(180%) blur(10px);
+      --glass-bg: rgba(255, 255, 255, 0.12);
+      --glass-border: rgba(255, 255, 255, 0.18);
+      --glass-highlight: rgba(255, 255, 255, 0.25);
+      --glass-shadow: rgba(0, 0, 0, 0.3);
+      --text-primary: #ffffff;
+      --text-secondary: rgba(255, 255, 255, 0.7);
+      --text-tertiary: rgba(255, 255, 255, 0.5);
+      --blue: #007AFF;
+      --orange: #FF9500;
+      --purple: #AF52DE;
+      --green: #30D158;
+      --red: #FF3B30;
+      --cyan: #5AC8FA;
+      --pink: #FF2D55;
+      --yellow: #FFD60A;
     }
 
-    * { box-sizing: border-box; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     body {
-      margin: 0;
-      font-family: 'Space Grotesk', 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background: radial-gradient(circle at 20% 20%, #1f2b4a 0, transparent 30%),
-                  radial-gradient(circle at 80% 0%, #2a4c3d 0, transparent 25%),
-                  linear-gradient(135deg, #0c0f19, #141824 45%, #0e1118);
-      color: var(--text);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
       min-height: 100vh;
+      background:
+        radial-gradient(ellipse at 20% 0%, rgba(94, 92, 230, 0.4) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 20%, rgba(255, 55, 95, 0.3) 0%, transparent 40%),
+        radial-gradient(ellipse at 40% 80%, rgba(48, 209, 88, 0.25) 0%, transparent 45%),
+        radial-gradient(ellipse at 90% 90%, rgba(0, 122, 255, 0.3) 0%, transparent 40%),
+        linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+      background-attachment: fixed;
+      color: var(--text-primary);
+      padding: 40px 20px;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    /* Header */
+    .header {
+      text-align: center;
+      margin-bottom: 48px;
+      position: relative;
+    }
+
+    .header::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 400px;
+      height: 400px;
+      background: radial-gradient(circle, rgba(0, 122, 255, 0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .header-icon {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      border-radius: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 48px 20px 72px;
+      font-size: 40px;
+      box-shadow:
+        0 10px 40px rgba(0, 122, 255, 0.4),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
     }
 
-    .shell {
-      width: min(960px, 100%);
-      margin: 0 auto;
-      position: relative;
-      padding: 32px;
-    }
-
-    .glow {
-      position: absolute;
-      inset: -80px;
-      background: radial-gradient(circle, rgba(122, 215, 255, 0.12), transparent 45%);
-      filter: blur(40px);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    header {
-      position: relative;
-      z-index: 1;
-      display: flex;
-      align-items: baseline;
-      gap: 12px;
-      margin-bottom: 28px;
-    }
-
-    .tag {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.06);
-      border: 1px solid var(--card-border);
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.4px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin: 0;
-      font-size: clamp(28px, 4vw, 38px);
+    .header h1 {
+      font-size: clamp(28px, 5vw, 42px);
+      font-weight: 700;
       letter-spacing: -0.5px;
-    }
-
-    p.lead {
-      margin: 6px 0 26px;
-      color: var(--muted);
-      max-width: 640px;
-      font-size: 17px;
-      line-height: 1.5;
-    }
-
-    .grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      background: var(--card);
-      border: 1px solid var(--card-border);
-      border-radius: 18px;
-      padding: 18px;
-      box-shadow: var(--shadow);
-      backdrop-filter: var(--blur);
-      transform: translateY(0);
-      transition: transform 160ms ease, border-color 160ms ease, box-shadow 160ms ease;
-    }
-
-    .card:hover {
-      transform: translateY(-6px);
-      border-color: rgba(255, 255, 255, 0.28);
-      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.45);
-    }
-
-    .card .pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 10px;
-      border-radius: 12px;
-      background: rgba(255, 255, 255, 0.08);
-      color: var(--muted);
-      font-size: 13px;
-      letter-spacing: 0.2px;
       margin-bottom: 12px;
+      background: linear-gradient(135deg, #fff 0%, rgba(255, 255, 255, 0.8) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
 
-    .card h2 {
-      margin: 0 0 6px;
-      font-size: 22px;
-      letter-spacing: -0.2px;
-    }
-
-    .card .desc {
-      margin: 0 0 12px;
-      color: var(--muted);
+    .header p {
+      font-size: 17px;
+      color: var(--text-secondary);
+      max-width: 500px;
+      margin: 0 auto;
       line-height: 1.5;
-      font-size: 15px;
     }
 
-    .chip {
+    /* Lists Grid */
+    .lists-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 24px;
+      margin-bottom: 32px;
+    }
+
+    /* Reminder List Card */
+    .reminder-list {
+      background: var(--glass-bg);
+      backdrop-filter: blur(40px) saturate(180%);
+      -webkit-backdrop-filter: blur(40px) saturate(180%);
+      border-radius: 24px;
+      border: 1px solid var(--glass-border);
+      overflow: hidden;
+      box-shadow:
+        0 8px 32px var(--glass-shadow),
+        inset 0 1px 0 var(--glass-highlight),
+        inset 0 -1px 0 rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      position: relative;
+    }
+
+    .reminder-list::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--glass-highlight), transparent);
+    }
+
+    .reminder-list:hover {
+      transform: translateY(-4px);
+      box-shadow:
+        0 16px 48px var(--glass-shadow),
+        inset 0 1px 0 var(--glass-highlight);
+    }
+
+    /* List Header */
+    .list-header {
+      padding: 20px 20px 16px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, transparent 100%);
+    }
+
+    .list-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      box-shadow:
+        0 4px 12px rgba(0, 0, 0, 0.3),
+        inset 0 1px 0 rgba(255, 255, 255, 0.3);
+    }
+
+    .list-icon.blue { background: linear-gradient(135deg, var(--blue), #5856D6); }
+    .list-icon.orange { background: linear-gradient(135deg, var(--orange), var(--red)); }
+    .list-icon.purple { background: linear-gradient(135deg, var(--purple), var(--pink)); }
+    .list-icon.green { background: linear-gradient(135deg, var(--green), #34C759); }
+    .list-icon.cyan { background: linear-gradient(135deg, var(--cyan), var(--blue)); }
+
+    .list-title {
+      flex: 1;
+    }
+
+    .list-title h2 {
+      font-size: 20px;
+      font-weight: 600;
+      letter-spacing: -0.3px;
+      margin-bottom: 2px;
+    }
+
+    .list-title span {
+      font-size: 13px;
+      color: var(--text-tertiary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .list-count {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--text-secondary);
+    }
+
+    /* Reminder Items */
+    .reminder-items {
+      padding: 8px 0;
+    }
+
+    .reminder-item {
+      padding: 14px 20px;
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      transition: background 0.2s ease;
+      position: relative;
+    }
+
+    .reminder-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 54px;
+      right: 20px;
+      height: 1px;
+      background: rgba(255, 255, 255, 0.06);
+    }
+
+    .reminder-item:hover {
+      background: rgba(255, 255, 255, 0.04);
+    }
+
+    .checkbox {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 2px solid;
+      flex-shrink: 0;
+      margin-top: 2px;
+      position: relative;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+
+    .checkbox.blue { border-color: var(--blue); }
+    .checkbox.orange { border-color: var(--orange); }
+    .checkbox.purple { border-color: var(--purple); }
+    .checkbox.green { border-color: var(--green); }
+    .checkbox.cyan { border-color: var(--cyan); }
+
+    .checkbox.checked {
+      background: currentColor;
+    }
+
+    .checkbox.checked::after {
+      content: '✓';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 14px;
+      font-weight: 600;
+    }
+
+    .checkbox.checked.blue { background: var(--blue); color: var(--blue); }
+    .checkbox.checked.orange { background: var(--orange); color: var(--orange); }
+    .checkbox.checked.purple { background: var(--purple); color: var(--purple); }
+    .checkbox.checked.green { background: var(--green); color: var(--green); }
+    .checkbox.checked.cyan { background: var(--cyan); color: var(--cyan); }
+
+    .reminder-content {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .reminder-title {
+      font-size: 16px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      line-height: 1.3;
+    }
+
+    .reminder-notes {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.45;
+    }
+
+    .reminder-tag {
       display: inline-flex;
       align-items: center;
-      gap: 8px;
-      padding: 7px 10px;
-      border-radius: 10px;
-      font-weight: 600;
-      font-size: 14px;
-      color: #0c0f14;
-      background: var(--chip-bg);
+      gap: 4px;
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 6px;
+      background: rgba(255, 255, 255, 0.08);
+      color: var(--text-tertiary);
+      margin-top: 8px;
     }
 
-    .chip span {
+    /* Footer */
+    .footer {
+      text-align: center;
+      padding: 32px 20px;
+      color: var(--text-tertiary);
+      font-size: 14px;
+    }
+
+    .footer-glass {
+      background: var(--glass-bg);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border-radius: 16px;
+      border: 1px solid var(--glass-border);
+      padding: 20px;
       display: inline-block;
-      padding: 6px;
-      border-radius: 8px;
-      background: rgba(0, 0, 0, 0.1);
     }
 
-    footer {
-      position: relative;
-      z-index: 1;
-      margin-top: 28px;
-      color: var(--muted);
-      font-size: 14px;
-    }
+    /* Responsive */
+    @media (max-width: 640px) {
+      body {
+        padding: 24px 16px;
+      }
 
-    @media (max-width: 540px) {
-      body { padding: 32px 16px 64px; }
-      .card { padding: 16px; }
-      header { align-items: flex-start; flex-direction: column; }
+      .header {
+        margin-bottom: 32px;
+      }
+
+      .header-icon {
+        width: 64px;
+        height: 64px;
+        font-size: 32px;
+        border-radius: 18px;
+      }
+
+      .lists-grid {
+        gap: 20px;
+      }
+
+      .reminder-list {
+        border-radius: 20px;
+      }
+
+      .list-header {
+        padding: 16px 16px 14px;
+      }
+
+      .list-icon {
+        width: 38px;
+        height: 38px;
+        font-size: 18px;
+      }
+
+      .list-title h2 {
+        font-size: 18px;
+      }
+
+      .reminder-item {
+        padding: 12px 16px;
+      }
     }
   </style>
 </head>
 <body>
-  <div class="shell">
-    <div class="glow"></div>
-    <header>
-      <div class="tag">Favourite Stack · November 27, 2025</div>
-      <h1>Simon's go-to providers for shipping fast.</h1>
+  <div class="container">
+    <header class="header">
+      <div class="header-icon">📋</div>
+      <h1>Simon's Favourite Tools</h1>
+      <p>A curated collection of the tech services that power my projects. Organized, opinionated, and ready to ship.</p>
     </header>
-    <p class="lead">A lightweight roster of services that keep projects online and humming. Opinionated, resilient, and battle-tested for the things I ship.</p>
 
-    <div class="grid">
-      <article class="card" style="--chip-bg: linear-gradient(135deg, #7ad7ff, #55a6ff);">
-        <div class="pill">Host · Infrastructure</div>
-        <h2>Railway</h2>
-        <p class="desc">One-line deploys, sane defaults, and logs where you need them. Perfect for getting ideas into production without wrestling YAML.</p>
-        <div class="chip"><span>🚂</span> Host</div>
-      </article>
+    <div class="lists-grid">
+      <!-- Web Services List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon orange">🌐</div>
+          <div class="list-title">
+            <h2>Web Services</h2>
+            <span>Infrastructure & Hosting</span>
+          </div>
+          <div class="list-count">2</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked orange"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Railway</div>
+              <div class="reminder-notes">One-line deploys, sane defaults, and logs where you need them. Perfect for getting ideas into production without wrestling YAML.</div>
+              <div class="reminder-tag">🚂 Hosting Platform</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked orange"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Cloudflare</div>
+              <div class="reminder-notes">Global edge caching, rock-solid DNS, and security features that just work. Keeps domains speedy and resilient by default.</div>
+              <div class="reminder-tag">☁️ DNS & CDN</div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-      <article class="card" style="--chip-bg: linear-gradient(135deg, #ffb347, #ff7746);">
-        <div class="pill">DNS · Edge</div>
-        <h2>Cloudflare</h2>
-        <p class="desc">Global edge caching, rock-solid DNS, and security features that just work. Keeps domains speedy and resilient by default.</p>
-        <div class="chip"><span>☁️</span> DNS</div>
-      </article>
-
-      <article class="card" style="--chip-bg: linear-gradient(135deg, #b37bff, #806bff);">
-        <div class="pill">AI · Language</div>
-        <h2>OpenAI</h2>
-        <p class="desc">State-of-the-art language models for building assistants, copilots, and clever product features without heavy infra overhead.</p>
-        <div class="chip"><span>✨</span> LLM</div>
-      </article>
+      <!-- AI List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon purple">🤖</div>
+          <div class="list-title">
+            <h2>AI</h2>
+            <span>Language Models & Intelligence</span>
+          </div>
+          <div class="list-count">1</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked purple"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">OpenAI</div>
+              <div class="reminder-notes">State-of-the-art language models for building assistants, copilots, and clever product features without heavy infra overhead.</div>
+              <div class="reminder-tag">✨ LLM Provider</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
 
-    <footer>
-      More favourites will join the list soon. For now, these three keep the lights bright.
+    <footer class="footer">
+      <div class="footer-glass">
+        More favourites will join the lists soon. For now, these keep the lights bright. ✨
+      </div>
     </footer>
   </div>
 </body>
