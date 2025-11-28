@@ -175,6 +175,11 @@
     .list-icon.purple { background: linear-gradient(135deg, var(--purple), var(--pink)); }
     .list-icon.green { background: linear-gradient(135deg, var(--green), #34C759); }
     .list-icon.cyan { background: linear-gradient(135deg, var(--cyan), var(--blue)); }
+    .list-icon.pink { background: linear-gradient(135deg, var(--pink), var(--purple)); }
+    .list-icon.yellow { background: linear-gradient(135deg, var(--yellow), var(--orange)); }
+    .list-icon.red { background: linear-gradient(135deg, var(--red), #FF6961); }
+    .list-icon.indigo { background: linear-gradient(135deg, #5856D6, var(--purple)); }
+    .list-icon.teal { background: linear-gradient(135deg, #64D2FF, var(--cyan)); }
 
     .list-title {
       flex: 1;
@@ -244,6 +249,11 @@
     .checkbox.purple { border-color: var(--purple); }
     .checkbox.green { border-color: var(--green); }
     .checkbox.cyan { border-color: var(--cyan); }
+    .checkbox.pink { border-color: var(--pink); }
+    .checkbox.yellow { border-color: var(--yellow); }
+    .checkbox.red { border-color: var(--red); }
+    .checkbox.indigo { border-color: #5856D6; }
+    .checkbox.teal { border-color: #64D2FF; }
 
     .checkbox.checked {
       background: currentColor;
@@ -265,6 +275,11 @@
     .checkbox.checked.purple { background: var(--purple); color: var(--purple); }
     .checkbox.checked.green { background: var(--green); color: var(--green); }
     .checkbox.checked.cyan { background: var(--cyan); color: var(--cyan); }
+    .checkbox.checked.pink { background: var(--pink); color: var(--pink); }
+    .checkbox.checked.yellow { background: var(--yellow); color: var(--yellow); }
+    .checkbox.checked.red { background: var(--red); color: var(--red); }
+    .checkbox.checked.indigo { background: #5856D6; color: #5856D6; }
+    .checkbox.checked.teal { background: #64D2FF; color: #64D2FF; }
 
     .reminder-content {
       flex: 1;
@@ -415,6 +430,254 @@
               <div class="reminder-title">OpenAI</div>
               <div class="reminder-notes">State-of-the-art language models for building assistants, copilots, and clever product features without heavy infra overhead.</div>
               <div class="reminder-tag">✨ LLM Provider</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Agentic Coding List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon indigo">🧠</div>
+          <div class="list-title">
+            <h2>Agentic Coding</h2>
+            <span>AI-Powered Development</span>
+          </div>
+          <div class="list-count">3</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked indigo"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Claude Code</div>
+              <div class="reminder-notes">Anthropic's CLI agent that thinks through problems, writes code, and commits changes. The future of pair programming is here.</div>
+              <div class="reminder-tag">🤖 AI Agent</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked indigo"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Codex</div>
+              <div class="reminder-notes">OpenAI's autonomous coding agent. Point it at a task, let it research, implement, and iterate until done.</div>
+              <div class="reminder-tag">🔮 AI Agent</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked indigo"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Cursor Composer</div>
+              <div class="reminder-notes">Multi-file AI editing that understands your whole codebase. Perfect for sweeping refactors and feature implementations.</div>
+              <div class="reminder-tag">✨ AI IDE Feature</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Development Tools List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon blue">💻</div>
+          <div class="list-title">
+            <h2>Development Tools</h2>
+            <span>Editor & Version Control</span>
+          </div>
+          <div class="list-count">2</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked blue"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Cursor / VS Code</div>
+              <div class="reminder-notes">The AI-native fork of VS Code with superpowers. Dracula theme keeps things easy on the eyes during those late-night sessions.</div>
+              <div class="reminder-tag">🎨 Dracula Theme</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked blue"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">GitHub</div>
+              <div class="reminder-notes">Where code lives. Pull requests, issues, actions, and the social layer that makes open source tick.</div>
+              <div class="reminder-tag">🐙 Version Control</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Databases List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon green">🗄️</div>
+          <div class="list-title">
+            <h2>Databases</h2>
+            <span>Data Storage & Queries</span>
+          </div>
+          <div class="list-count">1</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked green"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">PostgreSQL</div>
+              <div class="reminder-notes">The battle-tested relational database. Runs beautifully on Supabase for managed magic or Railway for full control.</div>
+              <div class="reminder-tag">🐘 Relational DB</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Productivity List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon cyan">📱</div>
+          <div class="list-title">
+            <h2>Productivity</h2>
+            <span>Communication & Notes</span>
+          </div>
+          <div class="list-count">3</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked cyan"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Slack</div>
+              <div class="reminder-notes">Where async work happens. Channels, threads, and integrations that keep teams in sync without endless meetings.</div>
+              <div class="reminder-tag">💬 Team Chat</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked cyan"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Apple Notes</div>
+              <div class="reminder-notes">Instant capture, beautiful formatting, and rock-solid sync. The best thoughts deserve a native home.</div>
+              <div class="reminder-tag">📝 Note Taking</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked cyan"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Apple Reminders</div>
+              <div class="reminder-notes">Simple lists that sync everywhere. Location-based triggers and smart lists keep things from falling through the cracks.</div>
+              <div class="reminder-tag">✅ Task Management</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Design List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon pink">🎨</div>
+          <div class="list-title">
+            <h2>Design</h2>
+            <span>Creative Tools</span>
+          </div>
+          <div class="list-count">1</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked pink"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Adobe Illustrator</div>
+              <div class="reminder-notes">Vector perfection for logos, icons, and illustrations. When pixels aren't precise enough, paths save the day.</div>
+              <div class="reminder-tag">✏️ Vector Graphics</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Auth & Identity List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon yellow">🔐</div>
+          <div class="list-title">
+            <h2>Auth & Identity</h2>
+            <span>User Authentication</span>
+          </div>
+          <div class="list-count">1</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked yellow"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Clerk</div>
+              <div class="reminder-notes">Drop-in auth with beautiful components. Social logins, MFA, and user management without the security headaches.</div>
+              <div class="reminder-tag">🔑 Auth Provider</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Monitoring List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon red">📊</div>
+          <div class="list-title">
+            <h2>Monitoring</h2>
+            <span>Observability & Analytics</span>
+          </div>
+          <div class="list-count">2</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked red"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Custom Internal Tools</div>
+              <div class="reminder-notes">Bespoke dashboards and alerts tailored to exactly what matters. When off-the-shelf doesn't cut it, build your own.</div>
+              <div class="reminder-tag">🛠️ Custom Built</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked red"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Better Stack</div>
+              <div class="reminder-notes">Uptime monitoring, incident management, and logs in one beautiful interface. Know when things break before users do.</div>
+              <div class="reminder-tag">📈 Observability</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Frameworks & Languages List -->
+      <div class="reminder-list">
+        <div class="list-header">
+          <div class="list-icon teal">⚡</div>
+          <div class="list-title">
+            <h2>Frameworks & Languages</h2>
+            <span>The Stack</span>
+          </div>
+          <div class="list-count">4</div>
+        </div>
+        <div class="reminder-items">
+          <div class="reminder-item">
+            <div class="checkbox checked teal"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">TypeScript</div>
+              <div class="reminder-notes">JavaScript that scales. Types catch bugs at compile time and make refactoring a breeze instead of a nightmare.</div>
+              <div class="reminder-tag">📘 Language</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked teal"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Next.js</div>
+              <div class="reminder-notes">The React framework for production. Server components, app router, and edge-ready by default.</div>
+              <div class="reminder-tag">⚛️ React Framework</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked teal"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Tailwind CSS</div>
+              <div class="reminder-notes">Utility-first CSS that keeps styles close to markup. Ship fast, iterate faster, never fight specificity again.</div>
+              <div class="reminder-tag">🎨 CSS Framework</div>
+            </div>
+          </div>
+          <div class="reminder-item">
+            <div class="checkbox checked teal"></div>
+            <div class="reminder-content">
+              <div class="reminder-title">Hono</div>
+              <div class="reminder-notes">Ultrafast web framework that runs everywhere. Edge-first, TypeScript-native, and delightfully minimal.</div>
+              <div class="reminder-tag">🔥 Web Framework</div>
             </div>
           </div>
         </div>
